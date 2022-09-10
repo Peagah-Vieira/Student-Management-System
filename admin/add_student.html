@@ -8,10 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Admin Dashboard | SMS</title>
-    <link rel="icon" href="Assets/img/favicon.ico" type="image/x-icon">
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="icon" href="../Assets/img/favicon.ico" type="image/x-icon">
+    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -24,7 +26,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -36,7 +38,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -58,9 +60,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Class Management:</h6>
-                        <a class="collapse-item" href="buttons.html">Add Class</a>
-                        <a class="collapse-item" href="cards.html">Manage Class</a>
+                        <h6 class="collapse-header text-dark">Class Management:</h6>
+                        <a class="collapse-item font-weight-light text-dark" href="add_class.html">Register Class</a>
+                        <a class="collapse-item font-weight-light text-dark" href="manage_class.html">Manage Class</a>
                     </div>
                 </div>
             </li>
@@ -75,9 +77,9 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Student Management:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Add Student</a>
-                        <a class="collapse-item" href="utilities-border.html">Manage Student</a>
+                        <h6 class="collapse-header text-dark">Student Management:</h6>
+                        <a class="collapse-item font-weight-light text-dark" href="add_student.html">Register Student</a>
+                        <a class="collapse-item font-weight-light text-dark" href="manage_student.html">Manage Student</a>
                     </div>
                 </div>
             </li>
@@ -99,34 +101,12 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <h6 class="collapse-header text-dark">Login Screens:</h6>
+                        <a class="collapse-item font-weight-light text-dark" href="../admin_login.html">Login</a>
+                        <a class="collapse-item font-weight-light text-dark" href="../forgot.html">Forgot Password</a>
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -311,7 +291,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="../assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -339,131 +319,187 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Report Summary</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Register Student</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Students</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Students</a></small>
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col-12">
+                                <div class="card rounded-3 text-black">
+                                    <form action="" method="post">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Name</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Email</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Class</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Gender</label>
+                                                        <select name="gender" value="" class="form-control" required='true'>
+                                                            <option value="">Choose Gender</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Date of Birth</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student ID</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Photo</label>
+                                                        <input type="file" name="image" value="" class="form-control" required='true'>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body font-weight-bold text-dark">
+                                                    <h3>Parents/Guardian's details</h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Father's Name</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Mother's Name</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Contact Number</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Alternate Contact Number</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Address</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body font-weight-bold text-dark">
+                                                    <h3>Login details</h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Username</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Password</label>
+                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button class="btn btn-primary mb-3 ml-3" type="submit">REGISTER <i class="fa-solid fa-arrow-right"></i></button>
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                </div>
+            </div>
+            <!-- End of Page Wrapper -->
 
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Class Notice</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Notices</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
                         </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Public Notice</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View PublicNotices</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
                         </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Class</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Classes</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="index.html">Logout</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End of Page Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="index.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="assets/vendor/jquery/jquery.min.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="assets/js/sb-admin-2.js"></script>
-        <script src="assets/vendor/chart.js/Chart.min.js"></script>
+            <script src="../assets/vendor/jquery/jquery.min.js"></script>
+            <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="https://kit.fontawesome.com/0527a7a8a4.js" crossorigin="anonymous"></script>
+            <script src="../assets/js/sb-admin-2.js"></script>
+            <script src="../assets/vendor/chart.js/Chart.min.js"></script>
 </body>
 
 </html>
