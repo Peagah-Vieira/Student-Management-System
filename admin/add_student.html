@@ -96,7 +96,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-folder"></i> 
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -107,7 +107,9 @@
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></a>
+            </li>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -154,7 +156,7 @@
                                     </div>
                                     <div>
                                         <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                        <span class="font-weight-medium">A new monthly report is ready to download!</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -202,7 +204,7 @@
                                         <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
-                                    <div class="font-weight-bold">
+                                    <div class="font-weight-medium">
                                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
                                             problem I've been having.</div>
                                         <div class="small text-gray-500">Emily Fowler · 58m</div>
@@ -258,11 +260,11 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="admin_profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="admin_settings.html">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -295,7 +297,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Name</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Name</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -303,7 +305,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Email</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Email</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -311,7 +313,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Class</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Class</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -319,7 +321,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Gender</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Gender</label>
                                                         <select name="gender" value="" class="form-control" required='true'>
                                                             <option value="">Choose Gender</option>
                                                             <option value="Male">Male</option>
@@ -331,7 +333,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Date of Birth</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Date of Birth</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -339,7 +341,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student ID</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student ID</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -347,20 +349,20 @@
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Student Photo</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Photo</label>
                                                         <input type="file" name="image" value="" class="form-control" required='true'>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <div class="card-body font-weight-bold text-dark">
+                                                <div class="card-body font-weight-medium text-dark">
                                                     <h3>Parents/Guardian's details</h3>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Father's Name</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Father's Name</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -368,7 +370,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Mother's Name</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Mother's Name</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -376,7 +378,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Contact Number</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Contact Number</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -384,7 +386,7 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Alternate Contact Number</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Alternate Contact Number</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -392,20 +394,20 @@
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Address</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Address</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <div class="card-body font-weight-bold text-dark">
+                                                <div class="card-body font-weight-medium text-dark">
                                                     <h3>Login details</h3>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Username</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Username</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
@@ -413,13 +415,13 @@
                                             <div class="col-lg-6">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-bold text-dark" for="form2Example11">Password</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Password</label>
                                                         <input type="email" id="form2Example11" class="form-control"/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button class="btn btn-primary mb-3 ml-3" type="submit">REGISTER <i class="fa-solid fa-arrow-right"></i></button>
+                                                <button class="btn btn-primary mb-3 ml-3" type="submit">REGISTER</button>
                                             </div>
                                         </div>
                                     </form>
@@ -450,7 +452,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="index.html">Logout</a>
+                            <a class="btn btn-primary" href="../index.html">Logout</a>
                         </div>
                     </div>
                 </div>
