@@ -60,7 +60,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-dark">Class Management:</h6>
+                        <h6 class="collapse-header text-dark">Class Management</h6>
                         <a class="collapse-item font-weight-light text-dark" href="add_class.html">Register Class</a>
                         <a class="collapse-item font-weight-light text-dark" href="manage_class.html">Manage Class</a>
                     </div>
@@ -77,9 +77,10 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-dark">Student Management:</h6>
+                        <h6 class="collapse-header text-dark">Student Management</h6>
                         <a class="collapse-item font-weight-light text-dark" href="add_student.html">Register Student</a>
                         <a class="collapse-item font-weight-light text-dark" href="manage_student.html">Manage Student</a>
+                        <a class="collapse-item font-weight-light text-dark" href="search.html">Search Student</a>
                     </div>
                 </div>
             </li>
@@ -101,15 +102,13 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-dark">Login Screens:</h6>
-                        <a class="collapse-item font-weight-light text-dark" href="../admin_login.html">Login</a>
+                        <h6 class="collapse-header text-dark">Pages</h6>
+                        <a class="collapse-item font-weight-light text-dark" href="../index.html">Index</a>
                         <a class="collapse-item font-weight-light text-dark" href="../forgot.html">Forgot Password</a>
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="search.html"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></a>
-            </li>
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -284,7 +283,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Admin Profile</h1>
+                        <h1 class="h3 mb-0 text-gray-800">McGee Profile</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -294,35 +293,38 @@
                                 <div class="card rounded-3 text-black">
                                     <form action="" method="post">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12 text-center mt-4">
+                                                <img src="../Assets/img/undraw_profile.svg" style="width:128px;height:128px;">
+                                            </div>
+                                            <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Admin Name</label>
-                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                        <input type="text" id="form2Example11" class="form-control" value="Douglas McGee" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Username</label>
-                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                        <input type="text" id="form2Example11" class="form-control" value="McGee" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Contact Number</label>
-                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                        <input type="email" id="form2Example11" class="form-control" value="(22)99999-7070" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Email</label>
-                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                        <input type="email" id="form2Example11" class="form-control" value="Douglas McGee" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -330,12 +332,9 @@
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Admin Registration Date</label>
-                                                        <input type="email" id="form2Example11" class="form-control"/>
+                                                        <input type="email" id="form2Example11" class="form-control" value="13/09/2022" disabled/>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <button class="btn btn-primary mb-3 ml-3" type="submit">UPDATE</button>
                                             </div>
                                         </div>
                                     </form>
