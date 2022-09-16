@@ -1,3 +1,8 @@
+<?php
+include_once('../db_connect.php');
+$stm = $conn->query("SELECT * FROM admin_sms");
+$db_admin = $stm->fetch(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +15,9 @@
     <title>Admin Dashboard | SMS</title>
     <link rel="icon" href="../Assets/img/favicon.ico" type="image/x-icon">
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -58,7 +65,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-dark">Class Management:</h6>
+                        <h6 class="collapse-header text-dark">Class Management</h6>
                         <a class="collapse-item font-weight-light text-dark" href="add_class.html">Register Class</a>
                         <a class="collapse-item font-weight-light text-dark" href="manage_class.html">Manage Class</a>
                     </div>
@@ -100,13 +107,13 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-dark">Login Screens:</h6>
-                        <a class="collapse-item font-weight-light text-dark" href="../admin_login.html">Login</a>
+                        <h6 class="collapse-header text-dark">Screens</h6>
+                        <a class="collapse-item font-weight-light text-dark" href="../index.html">Index</a>
                         <a class="collapse-item font-weight-light text-dark" href="../forgot.html">Forgot Password</a>
                     </div>
                 </div>
             </li>
-            
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -280,132 +287,101 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Report Summary</h1>
+                        <h1 class="h3 mb-0 text-gray-800">McGee Profile</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Class</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Classes</a></small>
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col-12">
+                                <div class="card rounded-3 text-black">
+                                    <form action="" method="post">
+                                        <div class="row">
+                                            <div class="col-lg-12 text-center mt-4">
+                                                <img src="../Assets/img/undraw_profile.svg" style="width:128px;height:128px;">
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Admin Name</label>
+                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_admin['AdminName']?>" disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Username</label>
+                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_admin['Username']?>" disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Contact Number</label>
+                                                        <input type="email" id="form2Example11" class="form-control" value="<?=$db_admin['MobileNumber']?>" disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Email</label>
+                                                        <input type="email" id="form2Example11" class="form-control" value="<?=$db_admin['Email']?>" disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Admin Registration Date</label>
+                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_admin['AdminRegDate']?>" disabled/>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                </div>
+            </div>
+            <!-- End of Page Wrapper -->
 
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Students</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Students</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
                         </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Public Notice</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Notices</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
                         </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Public Notice</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View PublicNotices</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="../index.html">Logout</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End of Page Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="../index.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="../assets/vendor/jquery/jquery.min.js"></script>
-        <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script src="https://kit.fontawesome.com/0527a7a8a4.js" crossorigin="anonymous"></script>
-        <script src="../assets/js/sb-admin-2.js"></script>
-        <script src="../assets/vendor/chart.js/Chart.min.js"></script>
+            <script src="../assets/vendor/jquery/jquery.min.js"></script>
+            <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="https://kit.fontawesome.com/0527a7a8a4.js" crossorigin="anonymous"></script>
+            <script src="../assets/js/sb-admin-2.js"></script>
+            <script src="../assets/vendor/chart.js/Chart.min.js"></script>
 </body>
 
 </html>

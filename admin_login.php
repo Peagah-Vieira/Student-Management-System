@@ -1,3 +1,22 @@
+<?php
+if(isset($_POST['username'],$_POST['password'])){
+  include_once('db_connect.php');
+
+  $username = $_POST['username'];  
+  $password = $_POST['password'];
+
+  $stm = $conn->query("SELECT Username,Password FROM admin_sms WHERE username='$username' and password='$password'");
+  $db_admin = $stm->fetch(PDO::FETCH_ASSOC);
+
+  if($username == isset($db_admin['Username']) && $password == isset($db_admin['Password'])){
+    echo "<script>console.log('Logado com sucesso')</script>";
+    header("Refresh: 5;url=admin/dashboard.php");
+  }
+  else{
+    echo "<script>console.log('Usuario ou senha Incorreta')</script>";
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,18 +42,17 @@
                   <img src="Assets/img/admin.png" style="width: 128px; height: 128px;"  alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Admin Login</h4>
                 </div>
-                <form>
+                <form method="POST">
                   <div class="form-outline">
-                    <input type="email" id="form2Example11" class="form-control" placeholder="Username" />
-
+                    <input type="text" id="form2Example11" class="form-control" placeholder="Username" name="username"/>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example22" class="form-control" placeholder="Password" />
+                    <input type="password" id="form2Example22" class="form-control" placeholder="Password" name="password" />
                   </div>
 
                   <div class="">
-                    <button class="btn btn-primary btn-block mb-3" type="button">Login</button>
+                    <button class="btn btn-primary btn-block mb-3" type="submit">Login</button>
                   </div>
 
                   <div class="text-center pt-1 pb-1">

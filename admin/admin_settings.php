@@ -1,3 +1,22 @@
+<?php
+include_once('../db_connect.php');
+$stm = $conn->query("SELECT * FROM admin_sms");
+$db_admin = $stm->fetch(PDO::FETCH_ASSOC);
+
+if(isset($_POST['newPassword'],$_POST['confirmPassword'])){
+    if($_POST['newPassword'] == $_POST['confirmPassword']){
+        $changePassword = $_POST['newPassword'];
+        $stm = $conn-> prepare("UPDATE `admin_sms` SET `Password`='$changePassword' WHERE Username='$db_admin[Username]'"); 
+        $stm->execute();
+        header("Refresh: 0;url=admin_settings.php");
+        echo "<script>console.log('$changePassword')</script>";
+    }
+    else{
+        echo "<script>console.log('Deu Algum Erro')</script>";
+    }
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -297,7 +316,7 @@
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Current Password</label>
-                                                        <input type="password" id="form2Example11" class="form-control" value="1234" disabled/>
+                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_admin['Password']?>" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -305,7 +324,7 @@
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">New Password</label>
-                                                        <input type="password" id="form2Example11" class="form-control"/>
+                                                        <input type="password" id="form2Example11" class="form-control" name="newPassword"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -313,7 +332,7 @@
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Confirm Password</label>
-                                                        <input type="password" id="form2Example11" class="form-control"/>
+                                                        <input type="password" id="form2Example11" class="form-control" name="confirmPassword"/>
                                                     </div>
                                                 </div>
                                             </div>
