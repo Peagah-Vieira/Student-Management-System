@@ -39,11 +39,11 @@
                   </div>
 
                   <div class="text-center pt-1 pb-1">
-                    <a class="text-muted" href="forgot.html">Forgot password?</a>
+                    <a class="text-muted" href="forgot.php">Forgot password?</a>
                   </div>
 
                   <div class="form-outline">
-                    <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                   </div>
                 </form>
 

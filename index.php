@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page | SMS</title>
-  <link rel="icon" href="Assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </head>
 
@@ -16,15 +15,15 @@
   <!-- Responsive navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container px-lg-5">
-      <a class="navbar-brand" href="index.html">SMS</a>
+      <a class="navbar-brand" href="index.php">SMS</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="admin_login.html">Admin</a></li>
-          <li class="nav-item"><a class="nav-link" href="student_login.html">Student</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin_login.php">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="student_login.php">Student</a></li>
         </ul>
       </div>
     </div>
@@ -83,7 +82,7 @@
           <div class="card bg-light border-0 h-100">
             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
               <div class="text-white mb-4 mt-n4 pt-3">
-                <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
+               <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
               </div>
               <h2 class="fs-4 fw-bold">Feature boxes</h2>
               <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
@@ -94,7 +93,7 @@
           <div class="card bg-light border-0 h-100">
             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
               <div class="text-white mb-4 mt-n4 pt-3">
-                <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
+              <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
               </div>
               <h2 class="fs-4 fw-bold">Simple clean code</h2>
               <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
@@ -105,7 +104,7 @@
           <div class="card bg-light border-0 h-100">
             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
               <div class="text-white mb-4 mt-n4 pt-3">
-                <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
+               <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
               </div>
               <h2 class="fs-4 fw-bold">A name you trust</h2>
               <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>

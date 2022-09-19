@@ -1,5 +1,5 @@
 <?php
-include_once('../db_connect.php');
+include_once('../backend/db_connect.php');
 $stm = $conn->query("SELECT * FROM admin_sms");
 $db_admin = $stm->fetch(PDO::FETCH_ASSOC);
 ?>

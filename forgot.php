@@ -34,7 +34,7 @@
                   </div>
 
                   <div class="form-outline">
-                    <a href="student_login.html"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="student_login.php"><i class="fa-solid fa-arrow-left"></i></a>
                   </div>
                 </form>
               </div>
