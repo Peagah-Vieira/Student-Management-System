@@ -39,7 +39,7 @@ include_once('../backend/student_register.php');
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-                        <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-12">
                                 <div class="card rounded-3 text-black">
                                     <form method="POST">
@@ -48,7 +48,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Name</label>
-                                                        <input type="text" id="form2Example11" class="form-control" name="studentName"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentName" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -56,7 +56,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example12">Student Email</label>
-                                                        <input type="text" id="form2Example12" class="form-control" name="studentEmail"/>
+                                                        <input type="text" id="form2Example12" class="form-control" name="studentEmail" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -64,7 +64,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example13">Student Class</label>
-                                                        <input type="text" id="form2Example13" class="form-control" name="studentClass"/>
+                                                        <input type="text" id="form2Example13" class="form-control" name="studentClass" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark">Gender</label>
-                                                        <select name="gender" value="" class="form-control">
+                                                        <select name="StudentGender" value="" class="form-control" required>
                                                             <option value="">Choose Gender</option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
@@ -84,7 +84,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example15">Date of Birth</label>
-                                                        <input type="date" id="form2Example15" class="form-control" name="studentBirth"/>
+                                                        <input type="date" id="form2Example15" class="form-control" name="studentBirth" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -92,7 +92,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example16">Student ID</label>
-                                                        <input type="text" id="form2Example16" class="form-control" name="studentID"/>
+                                                        <input type="text" id="form2Example16" class="form-control" name="studentID" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +100,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark">Student Photo</label>
-                                                        <input type="file" name="image" value="" class="form-control">
+                                                        <input type="file" name="image" value="" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example17">Father's Name</label>
-                                                        <input type="text" id="form2Example17" class="form-control" name="FatherName"/>
+                                                        <input type="text" id="form2Example17" class="form-control" name="FatherName" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,7 +121,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example18">Mother's Name</label>
-                                                        <input type="text" id="form2Example18" class="form-control" name="MotherName"/>
+                                                        <input type="text" id="form2Example18" class="form-control" name="MotherName" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,7 +129,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example19">Contact Number</label>
-                                                        <input type="text" id="form2Example19" class="form-control" name="studentNumber"/>
+                                                        <input type="text" id="form2Example19" class="form-control" name="studentNumber" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example21">Address</label>
-                                                        <input type="text" id="form2Example21" class="form-control" name="studentAddress"/>
+                                                        <input type="text" id="form2Example21" class="form-control" name="studentAddress" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,7 +158,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example22">Username</label>
-                                                        <input type="text" id="form2Example22" class="form-control" name="studentUsername"/>
+                                                        <input type="text" id="form2Example22" class="form-control" name="studentUsername" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -166,7 +166,7 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example23">Password</label>
-                                                        <input type="password" id="form2Example23" class="form-control" name="studentPassword"/>
+                                                        <input type="password" id="form2Example23" class="form-control" name="studentPassword" required/>
                                                     </div>
                                                 </div>
                                             </div>

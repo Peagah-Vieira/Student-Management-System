@@ -1,5 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
+include_once('../backend/admin_data.php');
 if(isset($_POST['newPassword'],$_POST['confirmPassword'])){
     if($_POST['newPassword'] == $_POST['confirmPassword']){
         $changePassword = $_POST['newPassword'];
@@ -52,7 +53,7 @@ if(isset($_POST['newPassword'],$_POST['confirmPassword'])){
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
-                        <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-12">
                                 <div class="card rounded-3 text-black">
                                     <form action="" method="post">

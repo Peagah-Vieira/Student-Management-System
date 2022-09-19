@@ -1,3 +1,6 @@
+<?php
+include_once('../backend/admin_data.php');
+?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

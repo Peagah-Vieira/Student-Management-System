@@ -1,6 +1,5 @@
 <?php
-$stm = $conn->query("SELECT Username,Password FROM admin_sms");
-$db_admin = $stm->fetch(PDO::FETCH_ASSOC);
+include_once('../backend/admin_data.php');
 ?>
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
