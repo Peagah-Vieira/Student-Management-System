@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_POST['studentBirth'],$_POST['FatherName'],$_POST['MotherName'],$_POST['studentNumber'],$_POST['studentAlternateNumber'],$_POST['studentAddress'],$_POST['studentUsername'],$_POST['studentPassword'])){
+if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_POST['studentBirth'],$_POST['studentGender'],$_POST['FatherName'],$_POST['MotherName'],$_POST['studentNumber'],$_POST['studentAlternateNumber'],$_POST['studentAddress'],$_POST['studentUsername'],$_POST['studentPassword'])){
     $studentName = filter_input(INPUT_POST,"studentName",FILTER_DEFAULT);
     $studentEmail = filter_input(INPUT_POST,"studentEmail",FILTER_SANITIZE_EMAIL);
     $studentClass = filter_input(INPUT_POST,"studentClass",FILTER_DEFAULT);
