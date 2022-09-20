@@ -1,9 +1,9 @@
 <?php
-if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_POST['studentBirth'],$_POST['studentGender'],$_POST['FatherName'],$_POST['MotherName'],$_POST['studentNumber'],$_POST['studentAlternateNumber'],$_POST['studentAddress'],$_POST['studentUsername'],$_POST['studentPassword'])){
-    $studentName = filter_input(INPUT_POST,"studentName",FILTER_DEFAULT);
+if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_POST['studentGender'],$_POST['studentBirth'],$_POST['studentID'],$_POST['FatherName'],$_POST['MotherName'],$_POST['studentNumber'],$_POST['studentAlternateNumber'],$_POST['studentAddress'],$_POST['studentUsername'],$_POST['studentPassword'])){
+    $studentName = filter_input(INPUT_POST,"studentName");
     $studentEmail = filter_input(INPUT_POST,"studentEmail",FILTER_SANITIZE_EMAIL);
     $studentClass = filter_input(INPUT_POST,"studentClass",FILTER_DEFAULT);
-    $studentGender = $_POST['StudentGender'];
+    $studentGender = $_POST['studentGender'];
     $studentBirth = filter_input(INPUT_POST,"studentBirth",FILTER_DEFAULT);
     $studentID = filter_input(INPUT_POST,"studentID",FILTER_DEFAULT);
     $FatherName = filter_input(INPUT_POST,"FatherName",FILTER_DEFAULT);
@@ -13,13 +13,22 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
     $studentAddress = filter_input(INPUT_POST,"studentAddress",FILTER_DEFAULT);
     $studentUsername= filter_input(INPUT_POST,"studentUsername",FILTER_DEFAULT);
     $studentPassword = password_hash(filter_input(INPUT_POST,"studentPassword"),PASSWORD_DEFAULT);
-    $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password)'); 
+    //Photo_Path to DataBase
+    $image = $_FILES['image'];
+    $pasta = "../student_images/";
+    $imageName = $image['name'];
+    $imageNewName = uniqid();
+    $extension = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
+    $deu_certo = move_uploaded_file($image['tmp_name'], $pasta . $imageNewName . "." . $extension);
+    $StudentPhoto = $pasta . $imageNewName . "." . $extension;
+    $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password)'); 
     $stm->bindParam('StudentName', $studentName);
     $stm->bindParam('StudentEmail', $studentEmail);
     $stm->bindParam('StudentClass', $studentClass);
     $stm->bindParam('StudentGender', $studentGender);
     $stm->bindParam('StudentBirth', $studentBirth);
     $stm->bindParam('StudentID', $studentID);
+    $stm->bindParam('StudentPhoto', $StudentPhoto);
     $stm->bindParam('FatherName', $FatherName);
     $stm->bindParam('MotherName', $MotherName);
     $stm->bindParam('ContactNumber', $studentNumber);
