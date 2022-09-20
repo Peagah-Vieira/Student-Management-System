@@ -1,5 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
+include_once('../backend/student_data.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,26 +55,47 @@ include_once('../backend/db_connect.php');
                                                     <th class="font-weight-bold text-dark">Student ID</th>
                                                     <th class="font-weight-bold text-dark">Student Email</th>
                                                     <th class="font-weight-bold text-dark">Student Class</th>
-                                                    <th class="font-weight-bold text-dark">Student Section</th>
+                                                    <th class="font-weight-bold text-dark">Student Gender</th>
                                                     <th class="font-weight-bold text-dark">Admissin Date</th>
                                                     <th class="font-weight-bold text-dark">Action</th>
                                                 </tr>
                                             </thead>
+                                            <?php foreach($db_student as $student){?>
                                             <tbody>
                                                 <tr>
-                                                    <th class="font-weight-light text-dark">Peagah</th>
-                                                    <th class="font-weight-light text-dark">0005FE3-1</th>
-                                                    <th class="font-weight-light text-dark">peagahvieira2003@gmail.com
+                                                    <th class="font-weight-light text-dark"><?=$student['StudentName']?></th>
+                                                    <th class="font-weight-light text-dark"><?=$student['StudentID']?></th>
+                                                    <th class="font-weight-light text-dark"><?=$student['StudentEmail']?>
                                                     </th>
-                                                    <th class="font-weight-light text-dark">Systems Analysis</th>
-                                                    <th class="font-weight-light text-dark">A</th>
-                                                    <th class="font-weight-light text-dark">2022-01-13 07:42:14</th>
+                                                    <th class="font-weight-light text-dark"><?=$student['StudentClass']?></th>
+                                                    <th class="font-weight-light text-dark"><?=$student['StudentGender']?></th>
+                                                    <th class="font-weight-light text-dark"><?=$student['AdmissionDate']?></th>
                                                     <th class="font-weight-light text-dark"><a href=""><i
                                                                 class="fa-regular fa-eye"></i></a> || <a href=""><i
                                                                 class="fa-solid fa-trash"></i></a></th>
                                                 </tr>
                                             </tbody>
+                                            <?php }?>
                                         </table>
+                                        <nav aria-label="Navegação de página exemplo">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Anterior">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Anterior</span>
+                                            </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                            <a class="page-link" href="manage_student.php?pg=<?=$forward?>" aria-label="Próximo">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Próximo</span>
+                                            </a>
+                                            </li>
+                                        </ul>
+                                        </nav>
                                     </div>
                                 </div>
                             </div>
