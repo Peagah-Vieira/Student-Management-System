@@ -1,5 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
+include_once('../backend/class_data.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,24 +49,57 @@ include_once('../backend/db_connect.php');
                                             <thead>
                                                 <tr>
                                                     <th class="font-weight-bold text-dark">Class Name</th>
-                                                    <th class="font-weight-bold text-dark">Section</th>
-                                                    <th class="font-weight-bold text-dark">Student Numbers</th>
+                                                    <th class="font-weight-bold text-dark">Unity</th>
                                                     <th class="font-weight-bold text-dark">Opening Date</th>
                                                     <th class="font-weight-bold text-dark">Conclusion Date</th>
                                                     <th class="font-weight-bold text-dark">Action</th>
                                                 </tr>
                                             </thead>
+                                            <?php foreach($db_class as $class){?>
                                             <tbody>
                                                 <tr>
-                                                    <th class="font-weight-light text-dark">Systems Analysis</th>
-                                                    <th class="font-weight-light text-dark">A</th>
-                                                    <th class="font-weight-light text-dark">10</th>
-                                                    <th class="font-weight-light text-dark">28/03/2022</th>
-                                                    <th class="font-weight-light text-dark">05/06/2023</th>
-                                                    <th class="font-weight-light text-dark"><a href=""><i class="fa-regular fa-eye"></i></a> || <a href=""><i class="fa-solid fa-trash"></i></a></th>
+                                                    <th class="font-weight-light text-dark"><?=$class['Class']?></th>
+                                                    <th class="font-weight-light text-dark"><?=$class['Unity']?></th>
+                                                    <th class="font-weight-light text-dark"><?=$class['Opening_Date']?>
+                                                    </th>
+                                                    <th class="font-weight-light text-dark"><?=$class['Conclusion_Date']?></th>
+                                                    <!--Gambiarra-->
+                                                    <form action="" method="POST">
+                                                    <th class="font-weight-light text-dark">
+                                                    <input type="text" value="<?php echo $class['ID']?>" name="delete" hidden>
+                                                    </button>
+                                                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                                    </th>
+                                                    </form>
+                                                    <?php echo "<script>console.log('$class[ID]')</script>"?>
                                                 </tr>
                                             </tbody>
+                                            <?php }?>
                                         </table>
+                                        <nav aria-label="Navegação de página exemplo">
+                                            <ul class="pagination">
+                                                <!--First Page-->
+                                                <li class="page-item"><a class="page-link" href="manage_class.php?page=1" aria-label="Anterior">First</a></li>
+                                                <!--Undo Page-->
+                                                <?php
+                                                for($undo_page = $page - $maximum_link; $undo_page <= $page - 1; $undo_page++){
+                                                    if($undo_page >= 1){
+                                                ?>
+                                                <li class="page-item"><a class="page-link" href="manage_class.php?page=<?=$undo_page?>"><?=$undo_page?></a></li>
+                                                <?php }}?>
+                                                <!--Atual Page-->
+                                                <li class="page-item active"><a class="page-link" href="manage_class.php?page=<?=$page?>"><?=$page?></a></li>
+                                                <!--Forward Page-->
+                                                <?php 
+                                                for($forward_page = $page + 1; $forward_page <= $page + $maximum_link; $forward_page++){
+                                                    if($forward_page <= $quantity){
+                                                ?>
+                                                <li class="page-item"><a class="page-link" href="manage_class.php?page=<?=$forward_page?>"><?=$forward_page?></a></li>
+                                                <?php }}?>
+                                                <!--Last Page-->
+                                                <li class="page-item"><a class="page-link" href="manage_class.php?page=<?=$quantity?>" aria-label="Anterior">Last</a></li>
+                                            </ul>
+                                        </nav>
                                     </div>
                                 </div>
                             </div>
