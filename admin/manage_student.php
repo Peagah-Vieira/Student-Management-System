@@ -73,30 +73,35 @@ include_once('../backend/student_data.php');
                                                     <th class="font-weight-light text-dark">
                                                     <a href=""><i class="fa-regular fa-eye"></i></a>
                                                     || 
-                                                    <a href="" onclick="return confirm('Do you really want to Delete ?');"><i class="fa-solid fa-trash"></i></a>
+                                                    <a href="" onclick=""><i class="fa-solid fa-trash"></i></a>
                                                     </th>
                                                 </tr>
                                             </tbody>
                                             <?php }?>
                                         </table>
                                         <nav aria-label="Navegação de página exemplo">
-                                        <ul class="pagination">
-                                            <li class="page-item"><a class="page-link" href="teste.php?page=1" aria-label="Anterior">Primeira</a></li>
-                                            <?php
-                                            for($pagina_anterior = $pagina - $maximo_link; $pagina_anterior <= $pagina - 1; $pagina_anterior++){
-                                                if($pagina_anterior >= 1){
-                                            ?>
-                                            <li class="page-item"><a class="page-link" href="teste.php?page=<?=$pagina_anterior?>"><?=$pagina_anterior?></a></li>
-                                            <?php }}?>
-                                            <li class="page-item active"><a class="page-link" href="teste.php?page=<?=$pagina?>"><?=$pagina?></a></li>
-                                            <?php 
-                                            for($proxima_pagina = $pagina + 1; $proxima_pagina <= $pagina + $maximo_link; $proxima_pagina++){
-                                                if($proxima_pagina <= $quantidade){
-                                            ?>
-                                            <li class="page-item"><a class="page-link" href="teste.php?page=<?=$proxima_pagina?>"><?=$proxima_pagina?></a></li>
-                                            <?php }}?>
-                                            <li class="page-item"><a class="page-link" href="teste.php?page=<?=$quantidade?>" aria-label="Anterior">Ultima</a></li>
-                                        </ul>
+                                            <ul class="pagination">
+                                                <!--First Page-->
+                                                <li class="page-item"><a class="page-link" href="manage_student.php?page=1" aria-label="Anterior">First</a></li>
+                                                <!--Undo Page-->
+                                                <?php
+                                                for($undo_page = $page - $maximum_link; $undo_page <= $page - 1; $undo_page++){
+                                                    if($undo_page >= 1){
+                                                ?>
+                                                <li class="page-item"><a class="page-link" href="manage_student.php?page=<?=$undo_page?>"><?=$undo_page?></a></li>
+                                                <?php }}?>
+                                                <!--Atual Page-->
+                                                <li class="page-item active"><a class="page-link" href="manage_student.php?page=<?=$page?>"><?=$page?></a></li>
+                                                <!--Forward Page-->
+                                                <?php 
+                                                for($forward_page = $page + 1; $forward_page <= $page + $maximum_link; $forward_page++){
+                                                    if($forward_page <= $quantity){
+                                                ?>
+                                                <li class="page-item"><a class="page-link" href="manage_student.php?page=<?=$forward_page?>"><?=$forward_page?></a></li>
+                                                <?php }}?>
+                                                <!--Last Page-->
+                                                <li class="page-item"><a class="page-link" href="manage_student.php?page=<?=$quantity?>" aria-label="Anterior">Last</a></li>
+                                            </ul>
                                         </nav>
                                     </div>
                                 </div>
