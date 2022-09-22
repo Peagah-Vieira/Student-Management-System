@@ -71,13 +71,11 @@ include_once('../backend/student_delete.php');
                                                     <th class="font-weight-light text-dark"><?=$student['StudentClass']?></th>
                                                     <th class="font-weight-light text-dark"><?=$student['StudentGender']?></th>
                                                     <th class="font-weight-light text-dark"><?=$student['AdmissionDate']?></th>
+                                                    <!--Gambiarra-->
                                                     <form action="" method="POST">
                                                     <th class="font-weight-light text-dark">
-                                                    <button class="btn btn-primary" type="button">
                                                     <input type="text" value="<?php echo $student['ID']?>" name="delete" hidden>
-                                                    <i class="fa-regular fa-eye"></i>
                                                     </button>
-                                                    || 
                                                     <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash"></i></button>
                                                     </th>
                                                     </form>

@@ -42,14 +42,14 @@ include_once('../backend/db_connect.php');
                     <div class="row d-flex justify-content-center align-items-center">
                         <div class="col-12">
                             <div class="card rounded-3 text-black">
-                                <form action="" method="post">
+                                <form action="student_information.php" method="post">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card-body">
                                                 <div class="form-outline mb-2">
                                                     <label class="form-label font-weight-medium text-dark"
                                                         for="form2Example11">Student ID</label>
-                                                    <input type="text" id="form2Example11" class="form-control" />
+                                                    <input type="text" id="form2Example11" class="form-control" name="StudentID"/>
                                                 </div>
                                             </div>
                                         </div>
