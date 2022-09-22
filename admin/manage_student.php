@@ -1,6 +1,7 @@
 <?php
 include_once('../backend/db_connect.php');
 include_once('../backend/student_data.php');
+include_once('../backend/student_delete.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,11 +71,17 @@ include_once('../backend/student_data.php');
                                                     <th class="font-weight-light text-dark"><?=$student['StudentClass']?></th>
                                                     <th class="font-weight-light text-dark"><?=$student['StudentGender']?></th>
                                                     <th class="font-weight-light text-dark"><?=$student['AdmissionDate']?></th>
+                                                    <form action="" method="POST">
                                                     <th class="font-weight-light text-dark">
-                                                    <a href=""><i class="fa-regular fa-eye"></i></a>
+                                                    <button class="btn btn-primary" type="button">
+                                                    <input type="text" value="<?php echo $student['ID']?>" name="delete" hidden>
+                                                    <i class="fa-regular fa-eye"></i>
+                                                    </button>
                                                     || 
-                                                    <a href="" onclick=""><i class="fa-solid fa-trash"></i></a>
+                                                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash"></i></button>
                                                     </th>
+                                                    </form>
+                                                    <?php echo "<script>console.log('$student[ID]')</script>"?>
                                                 </tr>
                                             </tbody>
                                             <?php }?>
