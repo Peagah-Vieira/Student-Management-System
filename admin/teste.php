@@ -82,7 +82,7 @@ include_once('../backend/student_data.php');
                                         <nav aria-label="Navegação de página exemplo">
                                         <ul class="pagination">
                                             <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Anterior">
+                                            <a class="page-link" href="teste.php?page=1" aria-label="Anterior">
                                                 <span aria-hidden="true">&laquo;</span>
                                                 <span class="sr-only">Anterior</span>
                                             </a>
@@ -91,7 +91,7 @@ include_once('../backend/student_data.php');
                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                                             <li class="page-item">
-                                            <a class="page-link" href="manage_student.php?pg=<?=$forward?>" aria-label="Próximo">
+                                            <a class="page-link" href="teste.php?page=<?=$quantidade?>" aria-label="Próximo">
                                                 <span aria-hidden="true">&raquo;</span>
                                                 <span class="sr-only">Próximo</span>
                                             </a>
