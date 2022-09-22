@@ -1,5 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
+include_once('../backend/class_register.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,11 +51,11 @@ include_once('../backend/db_connect.php');
                                                         <select name="class" value="" class="form-control" required='true'>
                                                             <option value="">Choose Class</option>
                                                             <option value="Systems Analysis">Systems Analysis</option>
-                                                            <option value="Systems Analysis">Systems Analysis</option>
-                                                            <option value="Systems Analysis">Systems Analysis</option>
-                                                            <option value="Systems Analysis">Systems Analysis</option>
-                                                            <option value="Systems Analysis">Systems Analysis</option>
-                                                            <option value="Systems Analysis">Systems Analysis</option>
+                                                            <option value="Management">Management</option>
+                                                            <option value="Nursing">Nursing</option>
+                                                            <option value="Human Resources">Human Resources</option>
+                                                            <option value="Hairdresser">Hairdresser</option>
+                                                            <option value="Dressmaking">Dressmaking</option>
                                                           </select>
                                                     </div>
                                                 </div>
@@ -63,15 +64,14 @@ include_once('../backend/db_connect.php');
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Section</label>
-                                                        <select name="section" value="" class="form-control" required='true'>
-                                                            <option value="">Choose Section</option>
-                                                            <option value="A">A</option>
-                                                            <option value="B">B</option>
-                                                            <option value="C">C</option>
-                                                            <option value="D">D</option>
-                                                            <option value="E">E</option>
-                                                            <option value="F">F</option>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Unity</label>
+                                                        <select name="unity" value="" class="form-control" required='true'>
+                                                            <option value="">Choose Unity</option>
+                                                            <option value="RJ">RJ</option>
+                                                            <option value="SP">SP</option>
+                                                            <option value="MG">MG</option>
+                                                            <option value="ES">ES</option>
+                                                            <option value="SC">SC</option>
                                                           </select>
                                                     </div>
                                                 </div>
@@ -81,7 +81,7 @@ include_once('../backend/db_connect.php');
                                                 <div class="card-body">
                                                     <div class="form-outline">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Opening Date</label>
-                                                        <input type="date" id="form2Example11" class="form-control"/>
+                                                        <input type="date" id="form2Example11" class="form-control" name="opening_Date"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,7 +90,7 @@ include_once('../backend/db_connect.php');
                                                 <div class="card-body">
                                                     <div class="form-outline">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Conclusion Date</label>
-                                                        <input type="date" id="form2Example11" class="form-control"/>
+                                                        <input type="date" id="form2Example11" class="form-control" name="conclusion_Date"/>
                                                     </div>
                                                 </div>
                                             </div>
