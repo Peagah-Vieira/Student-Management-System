@@ -81,21 +81,21 @@ include_once('../backend/student_data.php');
                                         </table>
                                         <nav aria-label="Navegação de página exemplo">
                                         <ul class="pagination">
-                                            <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Anterior">
-                                                <span aria-hidden="true">&laquo;</span>
-                                                <span class="sr-only">Anterior</span>
-                                            </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                            <a class="page-link" href="manage_student.php?pg=<?=$forward?>" aria-label="Próximo">
-                                                <span aria-hidden="true">&raquo;</span>
-                                                <span class="sr-only">Próximo</span>
-                                            </a>
-                                            </li>
+                                            <li class="page-item"><a class="page-link" href="teste.php?page=1" aria-label="Anterior">Primeira</a></li>
+                                            <?php
+                                            for($pagina_anterior = $pagina - $maximo_link; $pagina_anterior <= $pagina - 1; $pagina_anterior++){
+                                                if($pagina_anterior >= 1){
+                                            ?>
+                                            <li class="page-item"><a class="page-link" href="teste.php?page=<?=$pagina_anterior?>"><?=$pagina_anterior?></a></li>
+                                            <?php }}?>
+                                            <li class="page-item active"><a class="page-link" href="teste.php?page=<?=$pagina?>"><?=$pagina?></a></li>
+                                            <?php 
+                                            for($proxima_pagina = $pagina + 1; $proxima_pagina <= $pagina + $maximo_link; $proxima_pagina++){
+                                                if($proxima_pagina <= $quantidade){
+                                            ?>
+                                            <li class="page-item"><a class="page-link" href="teste.php?page=<?=$proxima_pagina?>"><?=$proxima_pagina?></a></li>
+                                            <?php }}?>
+                                            <li class="page-item"><a class="page-link" href="teste.php?page=<?=$quantidade?>" aria-label="Anterior">Ultima</a></li>
                                         </ul>
                                         </nav>
                                     </div>
@@ -107,7 +107,6 @@ include_once('../backend/student_data.php');
                 <!-- End of Page Wrapper -->
 
                 <?php include_once('templates/scroll_to_top.php');?>
-                <?php include_once('../backend/student_delete.php');?>
                 <?php include_once('templates/modal_logout.php');?>
                 <script src="../assets/vendor/jquery/jquery.min.js"></script>
                 <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -11,5 +11,8 @@ $db_student = $stm->fetchAll(PDO::FETCH_ASSOC);
 $qnt_registros = $conn->prepare("SELECT COUNT(ID) AS num_result FROM student_sms");
 $qnt_registros->execute();
 $registros = $qnt_registros->fetch(PDO::FETCH_ASSOC);
+
 $quantidade = ceil($registros['num_result'] / $limite_resultado);
+
+$maximo_link = 2;
 ?>
