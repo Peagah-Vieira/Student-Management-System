@@ -62,7 +62,7 @@ if(isset($_POST['newPassword'],$_POST['confirmPassword'])){
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Current Password</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_admin['Password']?>" disabled/>
+                                                        <input type="password" id="form2Example11" class="form-control" value="<?=$db_admin['Password']?>" disabled/>
                                                     </div>
                                                 </div>
                                             </div>
