@@ -48,8 +48,8 @@ include_once('../backend/class_data.php');
                                 <div class="d-sm-flex align-items-center mb-4">
                                         <a href="manage_student.php" class="text-dark ml-auto mb-3 mb-sm-0"> View all Student</a>
                                     </div>
-                                    <div class="table-responsive border rounded p-1">
-                                        <table class="table">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th class="font-weight-bold text-dark">Class Name</th>
