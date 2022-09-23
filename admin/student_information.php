@@ -1,6 +1,9 @@
 <?php
 include_once('../backend/db_connect.php');
 include_once('../backend/student_search.php');
+$class_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM class_sms");
+$class_quantity->execute();
+$class_registers = $class_quantity->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +55,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Name</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['StudentName']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentName" value="<?=$db_student['StudentName']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,23 +63,37 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Email</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['StudentEmail']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentEmail" value="<?=$db_student['StudentEmail']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Class</label>
-                                                        <input type="email" id="form2Example11" class="form-control" value="<?=$db_student['StudentClass']?>"/>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example13">Student Class</label>
+                                                        <select name="studentClass" value="" class="form-control">
+                                                        <?php 
+                                                        if($class_registers['num_result'] == 0){?>
+                                                            <option value="">No Return Values</option>
+                                                        <?php }
+                                                        else{?>
+                                                        <option value="">Choose Class</option>
+                                                        <?php foreach($db_class as $class){?>
+                                                            <option value="<?=$class['Class']?>"><?=$class['Class']?></option>
+                                                        <?php }}?>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="card-body">
-                                                    <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Gender</label>
-                                                        <input type="email" id="form2Example11" class="form-control" value="<?=$db_student['StudentGender']?>"/>
+                                                <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark">Gender</label>
+                                                        <select name="studentGender" value="" class="form-control">
+                                                            <option value="">Choose Gender</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,7 +101,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Birth</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['StudentBirth']?>"/>
+                                                        <input type="date" id="form2Example11" class="form-control" name="studentBirth" value="<?=$db_student['StudentBirth']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -92,7 +109,15 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Student ID</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['StudentID']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentID" value="<?=$db_student['StudentID']?>"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark">Student Photo</label>
+                                                        <input type="file" name="image" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +125,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Father Name</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['FatherName']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="FatherName" value="<?=$db_student['FatherName']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +133,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Mother Fame</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['MotherName']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="MotherName" value="<?=$db_student['MotherName']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,7 +141,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Contact Number</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['ContactNumber']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentNumber" value="<?=$db_student['ContactNumber']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,7 +149,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Alternative Contact Number</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['AlternateNumber']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentAlternateNumber" value="<?=$db_student['AlternateNumber']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -132,7 +157,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Address</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['Address']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentAddress" value="<?=$db_student['Address']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,7 +165,7 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Username</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['Username']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentUsername" value="<?=$db_student['Username']?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -148,7 +173,23 @@ include_once('../backend/student_search.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Password</label>
-                                                        <input type="text" id="form2Example11" class="form-control" value="<?=$db_student['Password']?>"/>
+                                                        <input type="text" id="form2Example11" class="form-control" name="studentPassword" value="<?=$db_student['Password']?>"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="card-body">
+                                                    <div class="form-outline mb-2">
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Situação</label>
+                                                        <select name="status" value="" class="form-control">
+                                                            <?php if($db_student['status'] == 1){?>
+                                                            <option value="1">Ativo</option>
+                                                            <option value="0">Inativo</option>
+                                                            <?php }else{?>
+                                                            <option value="0">Inativo</option>
+                                                            <option value="1">Ativo</option>
+                                                            <?php }?>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>

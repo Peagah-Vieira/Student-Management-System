@@ -28,7 +28,8 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
     $extension = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
     $deu_certo = move_uploaded_file($image['tmp_name'], $pasta . $imageNewName . "." . $extension);
     $StudentPhoto = $pasta . $imageNewName . "." . $extension;
-    $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password)'); 
+    $status = 1;
+    $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password,status) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password,:status)'); 
     $stm->bindParam('StudentName', $studentName);
     $stm->bindParam('StudentEmail', $studentEmail);
     $stm->bindParam('StudentClass', $studentClass);
@@ -43,5 +44,6 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
     $stm->bindParam('Address', $studentAddress);
     $stm->bindParam('Username', $studentUsername);
     $stm->bindParam('Password', $studentPassword);
+    $stm->bindParam('status', $status);
     $stm->execute();
 }
