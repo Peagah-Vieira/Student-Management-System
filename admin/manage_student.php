@@ -76,7 +76,7 @@ include_once('../backend/student_delete.php');
                                                     <th class="font-weight-light text-dark">
                                                     <input type="text" value="<?php echo $student['ID']?>" name="delete" hidden>
                                                     </button>
-                                                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                                    <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i></button>
                                                     </th>
                                                     </form>
                                                     <?php echo "<script>console.log('$student[ID]')</script>"?>

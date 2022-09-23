@@ -2,7 +2,7 @@
 $atual_page = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT); //Page URL
 $page = (!empty($atual_page)) ? $atual_page : 1;
 
-$result_limit = 10; 
+$result_limit = 2; 
 $begin = ($result_limit * $page) - $result_limit;
 
 $register_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM class_sms");
