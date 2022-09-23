@@ -70,8 +70,8 @@ include_once('../backend/student_register.php');
                                                             <option value="">No Return Values</option>
                                                         <?php }
                                                         else{?>
+                                                        <option value="">Choose Class</option>
                                                         <?php foreach($db_class as $class){?>
-                                                            <option value="">Choose Class</option>
                                                             <option value="<?=$class['Class']?>"><?=$class['Class']?></option>
                                                         <?php }}?>
                                                         </select>

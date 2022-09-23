@@ -58,7 +58,6 @@ include_once('../backend/admin_data.php');
                 <h6 class="collapse-header text-dark">Student Management</h6>
                 <a class="collapse-item font-weight-light text-dark" href="add_student.php">Register Student</a>
                 <a class="collapse-item font-weight-light text-dark" href="manage_student.php">Manage Student</a>
-                <a class="collapse-item font-weight-light text-dark" href="search.php">Search Student</a>
             </div>
         </div>
     </li>
