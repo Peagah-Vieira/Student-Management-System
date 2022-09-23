@@ -57,7 +57,7 @@ include_once('../backend/dashboard_sumary.php');
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fa-solid fa-scroll fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@ include_once('../backend/dashboard_sumary.php');
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                         <i class="fa-solid fa-child fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@ include_once('../backend/dashboard_sumary.php');
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fa-solid fa-graduation-cap fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@ include_once('../backend/dashboard_sumary.php');
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fa-solid fa-child-reaching fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
