@@ -184,11 +184,11 @@ include_once('../backend/student_update.php');
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Situação</label>
                                                         <select name="status" value="" class="form-control">
                                                             <?php if($db_student['status'] == 1){?>
-                                                            <option value="1">Ativo</option>
-                                                            <option value="0">Inativo</option>
+                                                            <option value="1">Active</option>
+                                                            <option value="0">inactive</option>
                                                             <?php }else{?>
-                                                            <option value="0">Inativo</option>
-                                                            <option value="1">Ativo</option>
+                                                            <option value="0">inactive</option>
+                                                            <option value="1">Active</option>
                                                             <?php }?>
                                                         </select>
                                                     </div>
