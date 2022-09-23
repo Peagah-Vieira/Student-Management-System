@@ -74,11 +74,10 @@ include_once('../backend/student_delete.php');
                                                     <!--Gambiarra-->
                                                     <form action="" method="POST">
                                                     <th class="font-weight-light text-dark">
-                                                    <a href="student_information.php?student_id=<?=$student['ID']?>"><button class="btn btn-primary" type="button"><i class="fa-solid fa-eye"></i></i></button></a>
+                                                    <a href="student_information.php?student_id=<?=$student['ID']?>"><button class="btn btn-primary" type="button" style="margin:3px;"><i class="fa-solid fa-eye"></i></i></button></a>
                                                     <input type="text" value="<?php echo $student['ID']?>" name="delete" hidden>
                                                     </button>
-                                                    <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i></button>
-                                                    </th>
+                                                    <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete this item?');" style="margin:3px;"><i class="fa-solid fa-trash" style="width:16px;height:16px;"></i></button>                                                    </th>
                                                     </form>
                                                 </tr>
                                             </tbody>
