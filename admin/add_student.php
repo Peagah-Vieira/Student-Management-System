@@ -65,10 +65,15 @@ include_once('../backend/student_register.php');
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example13">Student Class</label>
                                                         <select name="studentClass" value="" class="form-control" required>
-                                                        <option value="">Choose Class</option>
+                                                        <?php 
+                                                        if($class_registers['num_result'] == 0){?>
+                                                            <option value="">No Return Values</option>
+                                                        <?php }
+                                                        else{?>
                                                         <?php foreach($db_class as $class){?>
+                                                            <option value="">Choose Class</option>
                                                             <option value="<?=$class['Class']?>"><?=$class['Class']?></option>
-                                                        <?php }?>
+                                                        <?php }}?>
                                                         </select>
                                                     </div>
                                                 </div>
