@@ -1,4 +1,6 @@
 <?php
+$stm = $conn->query("SELECT * FROM class_sms WHERE status = '1'");
+$db_class = $stm->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_POST['studentGender'],$_POST['studentBirth'],$_POST['studentID'],$_POST['FatherName'],$_POST['MotherName'],$_POST['studentNumber'],$_POST['studentAlternateNumber'],$_POST['studentAddress'],$_POST['studentUsername'],$_POST['studentPassword'])){
     $studentName = filter_input(INPUT_POST,"studentName");
     $studentEmail = filter_input(INPUT_POST,"studentEmail",FILTER_SANITIZE_EMAIL);

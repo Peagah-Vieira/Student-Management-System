@@ -48,24 +48,16 @@ include_once('../backend/class_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Class</label>
-                                                        <select name="class" value="" class="form-control" required='true'>
-                                                            <option value="">Choose Class</option>
-                                                            <option value="Systems Analysis">Systems Analysis</option>
-                                                            <option value="Management">Management</option>
-                                                            <option value="Nursing">Nursing</option>
-                                                            <option value="Human Resources">Human Resources</option>
-                                                            <option value="Hairdresser">Hairdresser</option>
-                                                            <option value="Dressmaking">Dressmaking</option>
-                                                          </select>
+                                                        <input type="text" name="class" class="form-control" id="form2Example11" required>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Opening Date</label>
-                                                        <input type="date" id="form2Example11" class="form-control" name="opening_Date"/>
+                                                        <input type="date" id="form2Example11" class="form-control" name="opening_Date" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,7 +66,7 @@ include_once('../backend/class_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example11">Conclusion Date</label>
-                                                        <input type="date" id="form2Example11" class="form-control" name="conclusion_Date"/>
+                                                        <input type="date" id="form2Example11" class="form-control" name="conclusion_Date" required/>
                                                     </div>
                                                 </div>
                                             </div>

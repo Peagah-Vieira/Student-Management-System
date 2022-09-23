@@ -1,8 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
 include_once('../backend/student_register.php');
-$stm = $conn->query("SELECT * FROM class_sms");
-$db_class = $stm->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
