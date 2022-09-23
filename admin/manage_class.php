@@ -53,7 +53,6 @@ include_once('../backend/class_data.php');
                                             <thead>
                                                 <tr>
                                                     <th class="font-weight-bold text-dark">Class Name</th>
-                                                    <th class="font-weight-bold text-dark">Unity</th>
                                                     <th class="font-weight-bold text-dark">Opening Date</th>
                                                     <th class="font-weight-bold text-dark">Conclusion Date</th>
                                                     <th class="font-weight-bold text-dark">Action</th>
@@ -63,7 +62,6 @@ include_once('../backend/class_data.php');
                                             <tbody>
                                                 <tr>
                                                     <th class="font-weight-light text-dark"><?=$class['Class']?></th>
-                                                    <th class="font-weight-light text-dark"><?=$class['Unity']?></th>
                                                     <th class="font-weight-light text-dark"><?=$class['Opening_Date']?>
                                                     </th>
                                                     <th class="font-weight-light text-dark"><?=$class['Conclusion_Date']?></th>

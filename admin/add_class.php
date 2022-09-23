@@ -60,23 +60,7 @@ include_once('../backend/class_register.php');
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="card-body">
-                                                    <div class="form-outline">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Unity</label>
-                                                        <select name="unity" value="" class="form-control" required='true'>
-                                                            <option value="">Choose Unity</option>
-                                                            <option value="RJ">RJ</option>
-                                                            <option value="SP">SP</option>
-                                                            <option value="MG">MG</option>
-                                                            <option value="ES">ES</option>
-                                                            <option value="SC">SC</option>
-                                                          </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                            
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline">

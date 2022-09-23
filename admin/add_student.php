@@ -1,6 +1,8 @@
 <?php
 include_once('../backend/db_connect.php');
 include_once('../backend/student_register.php');
+$stm = $conn->query("SELECT * FROM class_sms");
+$db_class = $stm->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +66,12 @@ include_once('../backend/student_register.php');
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark" for="form2Example13">Student Class</label>
-                                                        <input type="text" id="form2Example13" class="form-control" name="studentClass" required/>
+                                                        <select name="studentClass" value="" class="form-control" required>
+                                                        <option value="">Choose Class</option>
+                                                        <?php foreach($db_class as $class){?>
+                                                            <option value="<?=$class['Class']?>"><?=$class['Class']?></option>
+                                                        <?php }?>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -76,7 +83,7 @@ include_once('../backend/student_register.php');
                                                             <option value="">Choose Gender</option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
-                                                          </select>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
