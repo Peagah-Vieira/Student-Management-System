@@ -79,7 +79,6 @@ include_once('../backend/student_delete.php');
                                                     <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i></button>
                                                     </th>
                                                     </form>
-                                                    <?php echo "<script>console.log('$student[ID]')</script>"?>
                                                 </tr>
                                             </tbody>
                                             <?php }?>

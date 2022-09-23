@@ -1,5 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
+include_once('../backend/class_delete.php');
 include_once('../backend/class_data.php');
 ?>
 <!DOCTYPE html>
@@ -68,10 +69,9 @@ include_once('../backend/class_data.php');
                                                     <th class="font-weight-light text-dark">
                                                     <input type="text" value="<?php echo $class['ID']?>" name="delete" hidden>
                                                     </button>
-                                                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                                    <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash"></i></button>
                                                     </th>
                                                     </form>
-                                                    <?php echo "<script>console.log('$class[ID]')</script>"?>
                                                 </tr>
                                             </tbody>
                                             <?php }?>
