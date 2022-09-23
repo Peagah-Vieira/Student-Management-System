@@ -4,6 +4,7 @@ include_once('../backend/student_search.php');
 $class_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM class_sms");
 $class_quantity->execute();
 $class_registers = $class_quantity->fetch(PDO::FETCH_ASSOC);
+include_once('../backend/student_update.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +78,7 @@ $class_registers = $class_quantity->fetch(PDO::FETCH_ASSOC);
                                                             <option value="">No Return Values</option>
                                                         <?php }
                                                         else{?>
-                                                        <option value="">Choose Class</option>
+                                                        <option value="<?=$db_student['StudentClass']?>">Choose Class</option>
                                                         <?php foreach($db_class as $class){?>
                                                             <option value="<?=$class['Class']?>"><?=$class['Class']?></option>
                                                         <?php }}?>
@@ -90,7 +91,7 @@ $class_registers = $class_quantity->fetch(PDO::FETCH_ASSOC);
                                                 <div class="form-outline mb-2">
                                                         <label class="form-label font-weight-medium text-dark">Gender</label>
                                                         <select name="studentGender" value="" class="form-control">
-                                                            <option value="">Choose Gender</option>
+                                                            <option value="<?=$db_student['StudentGender']?>">Choose Gender</option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
                                                         </select>
@@ -194,7 +195,7 @@ $class_registers = $class_quantity->fetch(PDO::FETCH_ASSOC);
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button class="btn btn-primary mb-3 ml-3" type="submit">UPDATE</button>
+                                                <button class="btn btn-primary mb-3 ml-3" type="submit" name="send">UPDATE</button>
                                             </div>
                                         </div>
                                     </form>
