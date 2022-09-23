@@ -1,5 +1,6 @@
 <?php
 include_once('../backend/db_connect.php');
+include_once('../backend/dashboard_sumary.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +52,8 @@ include_once('../backend/db_connect.php');
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Class</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Classes</a></small>
+                                                <p><?=$class_registers['num_result']?></p>
+                                                <small><a href="manage_class.php">View Classes</a></small>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -71,8 +72,8 @@ include_once('../backend/db_connect.php');
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Students</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Students</a></small>
+                                                <p><?=$student_registers['num_result']?></p>
+                                                <small><a href="manage_student.php">View Students</a></small>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -89,10 +90,10 @@ include_once('../backend/db_connect.php');
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Public Notice</div>
+                                                Total Active Class</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View Notices</a></small>
+                                                <p><?=$active_class_registers['num_result']?></p>
+                                                <small><a href="manage_class.php">View Active Classes</a></small>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -109,10 +110,10 @@ include_once('../backend/db_connect.php');
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Public Notice</div>
+                                                Total Active Students</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p>9</p>
-                                                <small><a href="">View PublicNotices</a></small>
+                                                <p><?=$active_student_registers['num_result']?></p>
+                                                <small><a href="manage_student.php">View Active Students</a></small>
                                             </div>
                                         </div>
                                         <div class="col-auto">
