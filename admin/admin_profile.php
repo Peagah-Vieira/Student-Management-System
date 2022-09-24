@@ -46,7 +46,7 @@ include_once('../backend/admin_data.php');
                                     <form action="" method="post">
                                         <div class="row">
                                             <div class="col-lg-12 text-center mt-4">
-                                                <img src="../Assets/img/undraw_profile.svg" style="width:128px;height:128px;">
+                                                <img src="<?=$db_admin['Photo']?>" class="rounded-circle" style="width:192px;height:192px;">
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="card-body">
