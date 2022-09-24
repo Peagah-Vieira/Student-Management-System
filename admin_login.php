@@ -9,6 +9,7 @@ if(isset($_POST['username'],$_POST['password'])){
   $db_admin = $stm->fetch(PDO::FETCH_ASSOC);
 
   if($username == isset($db_admin['Username']) && $password == isset($db_admin['Password'])){
+    session_start();
     echo "<script>console.log('Logado com sucesso')</script>";
     header("Refresh: 5;url=admin/dashboard.php");
   }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('../backend/db_connect.php');
 include_once('../backend/student_data.php');
 include_once('../backend/student_delete.php');

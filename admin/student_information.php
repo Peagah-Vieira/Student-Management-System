@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('../backend/db_connect.php');
 include_once('../backend/student_search.php');
 $class_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM class_sms");

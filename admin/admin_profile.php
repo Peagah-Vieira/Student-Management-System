@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('../backend/db_connect.php');
 include_once('../backend/admin_data.php');
 ?>
