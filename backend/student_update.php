@@ -24,7 +24,8 @@ if(isset($_POST['send'])){
     $status = $_POST['status'];
     $stm = $conn-> prepare("UPDATE student_sms SET StudentName = :StudentName, StudentEmail = :StudentEmail, StudentClass = :StudentClass, StudentGender = :StudentGender,
      StudentBirth = :StudentBirth, StudentID = :StudentID, StudentPhoto = :StudentPhoto, FatherName = :FatherName, MotherName = :MotherName, ContactNumber = :StudentNumber, 
-     AlternateNumber = :StudentAlternateNumber, Address = :StudentAddress, Username = :StudentUsername, Password = :StudentPassword, status = :Status WHERE ID = 40"); 
+     AlternateNumber = :StudentAlternateNumber, Address = :StudentAddress, Username = :StudentUsername, Password = :StudentPassword, status = :Status WHERE ID = $student_ID"); 
+   
     $stm->bindParam(':StudentName', $studentName);
     $stm->bindParam(':StudentEmail', $studentEmail);
     $stm->bindParam(':StudentClass', $studentClass);
@@ -41,6 +42,6 @@ if(isset($_POST['send'])){
     $stm->bindParam(':StudentPassword', $studentPassword);
     $stm->bindParam(':Status', $status);
     $stm->execute();
-    header("location: manage_student.php");
+    header("location: student_information.php?student_id=$student_ID");
 }
 ?>

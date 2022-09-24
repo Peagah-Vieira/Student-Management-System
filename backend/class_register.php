@@ -5,7 +5,7 @@ if(isset($_POST['class'],$_POST['opening_Date'],$_POST['conclusion_Date'])){
     $db_verification = $query->fetch(PDO::FETCH_ASSOC);
 
     if($verification == $db_verification['Class']){
-        echo "<script>console.log('Class already registered')</script>";
+        echo "<script>alert('Class already registered')</script>";
     }
     else{
         $class = filter_input(INPUT_POST,"class");

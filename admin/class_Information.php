@@ -1,7 +1,7 @@
 <?php
-session_start();
 include_once('../backend/db_connect.php');
 include_once('../backend/class_search.php');
+include_once('../backend/class_update.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -9,6 +9,4 @@ $verify = $db_class['Class'];
 $student_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM student_sms WHERE StudentClass = '$verify'");
 $student_quantity->execute();
 $student_registers = $student_quantity->fetch(PDO::FETCH_ASSOC);
-
-
 ?>
