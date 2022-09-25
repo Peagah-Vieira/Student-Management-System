@@ -71,26 +71,6 @@ include_once('../backend/dashboard_sumary.php');
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Students</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p><?=$student_registers['num_result']?></p>
-                                                <small><a href="manage_student.php">View Students</a></small>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                         <i class="fa-solid fa-child fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Active Class</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <p><?=$active_class_registers['num_result']?></p>
@@ -99,6 +79,26 @@ include_once('../backend/dashboard_sumary.php');
                                         </div>
                                         <div class="col-auto">
                                             <i class="fa-solid fa-graduation-cap fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Total Students</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <p><?=$student_registers['num_result']?></p>
+                                                <small><a href="manage_student.php">View Students</a></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                         <i class="fa-solid fa-child fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>

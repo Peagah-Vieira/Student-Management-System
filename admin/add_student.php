@@ -107,14 +107,7 @@ include_once('../backend/student_register.php');
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <div class="card-body">
-                                                    <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-medium text-dark">Student Photo</label>
-                                                        <input type="file" name="image" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-lg-12">
                                                 <div class="card-body font-weight-medium text-dark">
                                                     <h3>Parents/Guardian's details</h3>

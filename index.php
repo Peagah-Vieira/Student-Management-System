@@ -73,7 +73,7 @@
   </style>
 </head>
 
-<body>
+<body style="background-color:#F8F9FC;">
   <!-- Responsive navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark py-2" style="background: rgb(13,13,14);background: linear-gradient(330deg, rgba(13,13,14,1) 0%, rgba(29,32,34,1) 100%);">
     <div class="container px-lg-5">

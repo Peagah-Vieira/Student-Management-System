@@ -20,30 +20,47 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
     $studentAddress = filter_input(INPUT_POST,"studentAddress",FILTER_DEFAULT);
     $studentUsername= filter_input(INPUT_POST,"studentUsername",FILTER_DEFAULT);
     $studentPassword = password_hash(filter_input(INPUT_POST,"studentPassword"),PASSWORD_DEFAULT);
-    //Photo_Path to DataBase
-    $image = $_FILES['image'];
-    $pasta = "../student_images/";
-    $imageName = $image['name'];
-    $imageNewName = uniqid();
-    $extension = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
-    $deu_certo = move_uploaded_file($image['tmp_name'], $pasta . $imageNewName . "." . $extension);
-    $StudentPhoto = $pasta . $imageNewName . "." . $extension;
-    $status = 1;
-    $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password,status) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password,:status)'); 
-    $stm->bindParam('StudentName', $studentName);
-    $stm->bindParam('StudentEmail', $studentEmail);
-    $stm->bindParam('StudentClass', $studentClass);
-    $stm->bindParam('StudentGender', $studentGender);
-    $stm->bindParam('StudentBirth', $studentBirth);
-    $stm->bindParam('StudentID', $studentID);
-    $stm->bindParam('StudentPhoto', $StudentPhoto);
-    $stm->bindParam('FatherName', $FatherName);
-    $stm->bindParam('MotherName', $MotherName);
-    $stm->bindParam('ContactNumber', $studentNumber);
-    $stm->bindParam('AlternateNumber', $studentAlternateNumber);
-    $stm->bindParam('Address', $studentAddress);
-    $stm->bindParam('Username', $studentUsername);
-    $stm->bindParam('Password', $studentPassword);
-    $stm->bindParam('status', $status);
-    $stm->execute();
+    if($studentGender == 'Male'){
+        $StudentPhoto = "../student_images/undraw_male_avatar.svg";
+        $status = 1;
+        $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password,status) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password,:status)'); 
+        $stm->bindParam('StudentName', $studentName);
+        $stm->bindParam('StudentEmail', $studentEmail);
+        $stm->bindParam('StudentClass', $studentClass);
+        $stm->bindParam('StudentGender', $studentGender);
+        $stm->bindParam('StudentBirth', $studentBirth);
+        $stm->bindParam('StudentID', $studentID);
+        $stm->bindParam('StudentPhoto', $StudentPhoto);
+        $stm->bindParam('FatherName', $FatherName);
+        $stm->bindParam('MotherName', $MotherName);
+        $stm->bindParam('ContactNumber', $studentNumber);
+        $stm->bindParam('AlternateNumber', $studentAlternateNumber);
+        $stm->bindParam('Address', $studentAddress);
+        $stm->bindParam('Username', $studentUsername);
+        $stm->bindParam('Password', $studentPassword);
+        $stm->bindParam('status', $status);
+        $stm->execute();
+    }
+    else{
+        $StudentPhoto = "../student_images/undraw_female_avatar.svg";
+        $status = 1;
+        $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password,status) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password,:status)'); 
+        $stm->bindParam('StudentName', $studentName);
+        $stm->bindParam('StudentEmail', $studentEmail);
+        $stm->bindParam('StudentClass', $studentClass);
+        $stm->bindParam('StudentGender', $studentGender);
+        $stm->bindParam('StudentBirth', $studentBirth);
+        $stm->bindParam('StudentID', $studentID);
+        $stm->bindParam('StudentPhoto', $StudentPhoto);
+        $stm->bindParam('FatherName', $FatherName);
+        $stm->bindParam('MotherName', $MotherName);
+        $stm->bindParam('ContactNumber', $studentNumber);
+        $stm->bindParam('AlternateNumber', $studentAlternateNumber);
+        $stm->bindParam('Address', $studentAddress);
+        $stm->bindParam('Username', $studentUsername);
+        $stm->bindParam('Password', $studentPassword);
+        $stm->bindParam('status', $status);
+        $stm->execute();
+    }
+
 }
