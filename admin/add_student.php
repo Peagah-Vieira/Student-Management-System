@@ -43,7 +43,7 @@ include_once('../backend/student_register.php');
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-12">
                                 <div class="card rounded-3 text-black">
-                                    <form enctype="multipart/form-data" method="POST">
+                                    <form method="POST">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="card-body">

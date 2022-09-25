@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../backend/db_connect.php');
 include_once('../backend/class_delete.php');
 include_once('../backend/class_data.php');
@@ -56,16 +55,30 @@ include_once('../backend/class_data.php');
                                                     <th class="font-weight-bold text-dark">Class Name</th>
                                                     <th class="font-weight-bold text-dark">Opening Date</th>
                                                     <th class="font-weight-bold text-dark">Conclusion Date</th>
+                                                    <th class="font-weight-bold text-dark">Number of Student</th>
+                                                    <th class="font-weight-bold text-dark">Status</th>
                                                     <th class="font-weight-bold text-dark">Action</th>
                                                 </tr>
                                             </thead>
-                                            <?php foreach($db_class as $class){?>
+                                            <?php foreach($db_class as $class){
+                                                    $status = $class['status'];
+                                                    $class_verification = $class['Class'];
+                                                
+                                                    $stm = $conn->query("SELECT * FROM class_sms WHERE status = '$status' and Class = '$class_verification'");
+                                                    $db_teste = $stm->fetch(PDO::FETCH_ASSOC);
+                                                    $verify = $db_teste['Class'];
+                                                
+                                                    $student_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM student_sms WHERE StudentClass = '$verify'");
+                                                    $student_quantity->execute();
+                                                    $student_registers = $student_quantity->fetch(PDO::FETCH_ASSOC);?>
                                             <tbody>
                                                 <tr>
                                                     <th class="font-weight-light text-dark"><?=$class['Class']?></th>
                                                     <th class="font-weight-light text-dark"><?=$class['Opening_Date']?>
                                                     </th>
                                                     <th class="font-weight-light text-dark"><?=$class['Conclusion_Date']?></th>
+                                                    <th class="font-weight-bold text-dark"><?=$student_registers['num_result']?></th>
+                                                    <th class="font-weight-bold text-dark"><?php if($class['status'] == 1){echo "Active";}else{echo "Inactive"; }?></th>
                                                     <!--Gambiarra-->
                                                     <form action="" method="POST">
                                                     <th class="font-weight-light text-dark">

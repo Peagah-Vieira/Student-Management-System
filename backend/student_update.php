@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['send'])){
-    $studentName = filter_input(INPUT_POST,"studentName");
+    $studentName = filter_input(INPUT_POST,"studentName",FILTER_DEFAULT);
     $studentEmail = filter_input(INPUT_POST,"studentEmail",FILTER_SANITIZE_EMAIL);
     $studentClass = filter_input(INPUT_POST,"studentClass",FILTER_DEFAULT);
     $studentGender = $_POST['studentGender'];

@@ -24,7 +24,7 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
             header("location: add_student.php");
         }
     }
-        $studentName = filter_input(INPUT_POST,"studentName");
+        $studentName = filter_input(INPUT_POST,"studentName",FILTER_DEFAULT);
         $studentEmail = filter_input(INPUT_POST,"studentEmail",FILTER_SANITIZE_EMAIL);
         $studentClass = filter_input(INPUT_POST,"studentClass",FILTER_DEFAULT);
         $studentGender = $_POST['studentGender'];

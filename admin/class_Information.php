@@ -49,7 +49,7 @@ include_once('../backend/class_update.php');
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Student Quantity</label>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Number of Student</label>
                                                         <input type="text" id="form2Example11" class="form-control" name="studentQuantity" value="<?=$student_registers['num_result']?>" disabled/>
                                                     </div>
                                                 </div>
