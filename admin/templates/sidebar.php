@@ -2,7 +2,8 @@
 include_once('../backend/admin_data.php');
 ?>
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: rgb(13,13,14);
+background: linear-gradient(330deg, rgba(13,13,14,1) 0%, rgba(29,32,34,1) 100%);">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
