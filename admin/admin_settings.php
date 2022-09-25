@@ -8,10 +8,9 @@ if(isset($_POST['newPassword'],$_POST['confirmPassword'])){
         $stm = $conn-> prepare("UPDATE `admin_sms` SET `Password`='$changePassword' WHERE Username='$db_admin[Username]'"); 
         $stm->execute();
         header("Refresh: 0;url=admin_settings.php");
-        echo "<script>console.log('$changePassword')</script>";
     }
     else{
-        echo "<script>console.log('Deu Algum Erro')</script>";
+        echo "<script>alert('Something went wrong!')</script>";
     }
     
 }
@@ -70,16 +69,16 @@ if(isset($_POST['newPassword'],$_POST['confirmPassword'])){
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">New Password</label>
-                                                        <input type="password" id="form2Example11" class="form-control" name="newPassword"/>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example12">New Password</label>
+                                                        <input type="password" id="form2Example12" class="form-control" name="newPassword"/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="card-body">
                                                     <div class="form-outline mb-2">
-                                                        <label class="form-label font-weight-medium text-dark" for="form2Example11">Confirm Password</label>
-                                                        <input type="password" id="form2Example11" class="form-control" name="confirmPassword"/>
+                                                        <label class="form-label font-weight-medium text-dark" for="form2Example13">Confirm Password</label>
+                                                        <input type="password" id="form2Example13" class="form-control" name="confirmPassword"/>
                                                     </div>
                                                 </div>
                                             </div>

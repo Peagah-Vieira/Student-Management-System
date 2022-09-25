@@ -1,20 +1,19 @@
 <?php
-if(isset($_POST['username'],$_POST['password'])){
+if(isset($_POST['username']) && isset($_POST['password'])){
   include_once('backend/db_connect.php');
 
   $username = $_POST['username'];  
   $password = $_POST['password'];
 
-  $stm = $conn->query("SELECT Username,Password FROM admin_sms WHERE username='$username' and password='$password'");
+  $stm = $conn->query("SELECT Username,Password FROM admin_sms WHERE username = '$username' and password = '$password'");
   $db_admin = $stm->fetch(PDO::FETCH_ASSOC);
 
   if($username == isset($db_admin['Username']) && $password == isset($db_admin['Password'])){
-    session_start();
-    echo "<script>console.log('Logado com sucesso')</script>";
-    header("Refresh: 5;url=admin/dashboard.php");
+    echo "<script>alert('Successfully logged in, you will be redirected in 3 seconds!')</script>";
+    header("Refresh: 3;url=admin/dashboard.php");
   }
   else{
-    echo "<script>console.log('Usuario ou senha Incorreta')</script>";
+    echo "<script>alert('Incorrect username or password')</script>";
   }
 }
 ?>
