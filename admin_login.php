@@ -1,22 +1,3 @@
-<?php
-if(isset($_POST['username']) && isset($_POST['password'])){
-  include_once('backend/db_connect.php');
-
-  $username = $_POST['username'];  
-  $password = $_POST['password'];
-
-  $stm = $conn->query("SELECT Username,Password FROM admin_sms WHERE username = '$username' and password = '$password'");
-  $db_admin = $stm->fetch(PDO::FETCH_ASSOC);
-
-  if($username == isset($db_admin['Username']) && $password == isset($db_admin['Password'])){
-    echo "<script>alert('Successfully logged in, you will be redirected in 3 seconds!')</script>";
-    header("Refresh: 3;url=admin/dashboard.php");
-  }
-  else{
-    echo "<script>alert('Incorrect username or password')</script>";
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +8,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
   <title>Admin Login | SMS</title>
   <link rel="icon" href="Assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
 </head>
 
 <body>
@@ -60,6 +42,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                     <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                   </div>
                 </div>
+                
               </form>
             </div>
           </div>
@@ -68,8 +51,11 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     </div>
   </section>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="https://kit.fontawesome.com/0527a7a8a4.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+<?php include_once('backend/admin_login.php')?>

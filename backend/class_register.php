@@ -5,7 +5,23 @@ if(isset($_POST['class'],$_POST['opening_Date'],$_POST['conclusion_Date'])){
     $db_verification = $query->fetch(PDO::FETCH_ASSOC);
 
     if($verification == $db_verification['Class']){
-        echo "<script>alert('Class already registered')</script>";
+        echo "<script type='text/javascript'>toastr.warning('Class already registered!', 'Situation', {
+            'closeButton': true,
+            'debug': false,
+            'newestOnTop': false,
+            'progressBar': true,
+            'positionClass': 'toast-bottom-left',
+            'preventDuplicates': false,
+            'onclick': null,
+            'showDuration': '300',
+            'hideDuration': '1000',
+            'timeOut': '5000',
+            'extendedTimeOut': '1000',
+            'showEasing': 'swing',
+            'hideEasing': 'linear',
+            'showMethod': 'fadeIn',
+            'hideMethod': 'fadeOut'
+        });</script>"; 
     }
     else{
         $class = filter_input(INPUT_POST,"class");
@@ -18,7 +34,6 @@ if(isset($_POST['class'],$_POST['opening_Date'],$_POST['conclusion_Date'])){
         $stm->bindParam(':Conclusion_Date', $conclusion_Date);
         $stm->bindParam(':status', $status);
         $stm->execute();
-        header("location: add_class.php");
     }
 }
 ?>

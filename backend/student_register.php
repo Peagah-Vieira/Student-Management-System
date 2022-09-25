@@ -17,11 +17,9 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
         $student_registers = $student_quantity->fetch(PDO::FETCH_ASSOC);
         if($student_registers['num_result'] == 4){
             $class_status = 0;
-            echo "<script>alert('Classe Lotada')</script>";
             $stm = $conn->prepare("UPDATE class_sms SET status = :Status WHERE Class = '$teste'"); 
             $stm->bindParam(':Status', $class_status);
             $stm->execute();
-            header("location: add_student.php");
         }
     }
     $studentName = filter_input(INPUT_POST,"studentName",FILTER_DEFAULT);
@@ -57,6 +55,23 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
         $stm->bindParam('Password', $studentPassword);
         $stm->bindParam('status', $status);
         $stm->execute();
+        echo "<script type='text/javascript'>toastr.success('Successfully registered student!', 'Situation', {
+            'closeButton': true,
+            'debug': false,
+            'newestOnTop': false,
+            'progressBar': true,
+            'positionClass': 'toast-bottom-left',
+            'preventDuplicates': false,
+            'onclick': null,
+            'showDuration': '300',
+            'hideDuration': '1000',
+            'timeOut': '5000',
+            'extendedTimeOut': '1000',
+            'showEasing': 'swing',
+            'hideEasing': 'linear',
+            'showMethod': 'fadeIn',
+            'hideMethod': 'fadeOut'
+        });</script>"; 
     }
     else if($studentGender == 'Female'){
         $StudentPhoto = "../student_images/undraw_female_avatar.svg";
@@ -77,5 +92,22 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
         $stm->bindParam('Password', $studentPassword);
         $stm->bindParam('status', $status);
         $stm->execute();
+        echo "<script type='text/javascript'>toastr.success('Successfully registered student!', 'Situation', {
+            'closeButton': true,
+            'debug': false,
+            'newestOnTop': false,
+            'progressBar': true,
+            'positionClass': 'toast-bottom-left',
+            'preventDuplicates': false,
+            'onclick': null,
+            'showDuration': '300',
+            'hideDuration': '1000',
+            'timeOut': '5000',
+            'extendedTimeOut': '1000',
+            'showEasing': 'swing',
+            'hideEasing': 'linear',
+            'showMethod': 'fadeIn',
+            'hideMethod': 'fadeOut'
+        });</script>"; 
     }
 }
