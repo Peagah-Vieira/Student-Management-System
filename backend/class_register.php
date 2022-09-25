@@ -34,6 +34,7 @@ if(isset($_POST['class'],$_POST['opening_Date'],$_POST['conclusion_Date'])){
         $stm->bindParam(':Conclusion_Date', $conclusion_Date);
         $stm->bindParam(':status', $status);
         $stm->execute();
+        header("location: add_class.php");
     }
 }
 ?>

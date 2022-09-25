@@ -67,7 +67,7 @@ include_once('../backend/class_data.php');
                                                     $stm = $conn->query("SELECT * FROM class_sms WHERE status = '$status' and Class = '$class_verification'");
                                                     $db_teste = $stm->fetch(PDO::FETCH_ASSOC);
                                                     $verify = $db_teste['Class'];
-                                                
+                                                    
                                                     $student_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM student_sms WHERE StudentClass = '$verify'");
                                                     $student_quantity->execute();
                                                     $student_registers = $student_quantity->fetch(PDO::FETCH_ASSOC);?>
