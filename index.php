@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -9,13 +9,75 @@
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <style>
+    img {
+      height: 150px;
+      width: 100%;
+    }
+
+    div [class^="col-"] {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .card {
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .card-title {
+      font-size: 15px;
+      transition: 1s;
+      cursor: pointer;
+    }
+
+    .card-title i {
+      font-size: 15px;
+      transition: 1s;
+      cursor: pointer;
+      color: #ffa710
+    }
+
+    .card-text {
+      height: 80px;
+    }
+
+    .card::before,
+    .card::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: scale3d(0, 0, 1);
+      transition: transform .3s ease-out 0s;
+      background: rgba(255, 255, 255, 0.1);
+      content: '';
+      pointer-events: none;
+    }
+
+    .card::before {
+      transform-origin: left top;
+    }
+
+    .card::after {
+      transform-origin: right bottom;
+    }
+
+    .card:hover::before,
+    .card:hover::after,
+    .card:focus::before,
+    .card:focus::after {
+      transform: scale3d(1, 1, 1);
+    }
+  </style>
 </head>
 
 <body>
   <!-- Responsive navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark py-2" style="background: rgb(13,13,14);background: linear-gradient(330deg, rgba(13,13,14,1) 0%, rgba(29,32,34,1) 100%);">
     <div class="container px-lg-5">
-      <a class="navbar-brand" href="index.php">SMS</a>
+      <a class="navbar-brand" href="index.php"><img src="assets/img/favicon.ico" style="height:33px;;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
           class="navbar-toggler-icon"></span></button>
@@ -29,108 +91,73 @@
     </div>
   </nav>
   <!-- Header-->
-  <header class="py-3">
+  <header>
     <div class="container px-lg-5">
-      <div class="p-4 p-lg-5 rounded-3 text-center">
+      <div class="px-4 p-lg-3 rounded-3 text-center">
         <div class="m-4 m-lg-5">
-          <h1 class="display-5 fw-bold">Student Manager System </h1>
-          <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has been
-            removed from the framework. Why create custom CSS when you can use utilities?</p>
+          <h1 class="display-5 fw-bold">Student Management System</h1>
+          <p class="fs-4">Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rho</p>
         </div>
       </div>
     </div>
   </header>
   <!-- Page Content-->
-  <section class="pt-4">
+  <section>
     <div class="container px-lg-5">
       <!-- Page Features-->
-      <div class="row gx-lg-5">
-        <div class="col-lg-6 col-xxl-4 mb-5">
-          <div class="card bg-light border-0 h-100">
-            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-              <div class="text-white mb-4 mt-n4 pt-3">
-                <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
-              </div>
-              <h2 class="fs-4 fw-bold">Fresh new layout</h2>
-              <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
+      <div class="row gx-lg-3 mb-5 p-3">
+          <div class="col-md-3 col-sm-3 mt-2">
+            <div class="card card-block p-2 text-center">
+              <img src="assets/img/useful_tools.jpg" alt="Photo of sunset">
+              <h5 class="card-title mt-3 mb-3 fw-bold fs-5">Useful Tools</h5>
+              <p class="card-text">Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada.</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-xxl-4 mb-5">
-          <div class="card bg-light border-0 h-100">
-            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-              <div class="text-white mb-4 mt-n4 pt-3">
-                <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
-              </div>
-              <h2 class="fs-4 fw-bold">Free to download</h2>
-              <p class="mb-0">As always, Start Bootstrap has a powerful collectin of free templates.</p>
+
+          <div class="col-md-3 col-sm-3 mt-2">
+            <div class="card card-block p-2 text-center">
+              <img src="assets/img/student_management.jpg" alt="Photo of sunset">
+              <h5 class="card-title mt-3 mb-3 fw-bold fs-5">Student Management</h5>
+              <p class="card-text">Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada.</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-xxl-4 mb-5">
-          <div class="card bg-light border-0 h-100">
-            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-              <div class="text-white mb-4 mt-n4 pt-3">
-                <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
-              </div>
-              <h2 class="fs-4 fw-bold">Jumbotron hero header</h2>
-              <p class="mb-0">The heroic part of this template is the jumbotron hero header!</p>
+
+          <div class="col-md-3 col-sm-6 mt-2">
+            <div class="card card-block p-2 text-center">
+              <img src="assets/img/class_management.jpg" alt="Photo of sunset">
+              <h5 class="card-title mt-3 mb-3 fw-bold fs-5">Class Management</h5>
+              <p class="card-text">Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada.</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-xxl-4 mb-5">
-          <div class="card bg-light border-0 h-100">
-            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-              <div class="text-white mb-4 mt-n4 pt-3">
-               <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
-              </div>
-              <h2 class="fs-4 fw-bold">Feature boxes</h2>
-              <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
+
+          <div class="col-md-3 col-sm-6 mt-2">
+            <div class="card card-block p-2 text-center">
+              <img src="assets/img/encrypted_password.jpg" alt="Photo of sunset">
+              <h5 class="card-title mt-3 mb-3 fw-bold fs-5">Encrypted Password</h5>
+              <p class="card-text">Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada.</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-xxl-4 mb-5">
-          <div class="card bg-light border-0 h-100">
-            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-              <div class="text-white mb-4 mt-n4 pt-3">
-              <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
-              </div>
-              <h2 class="fs-4 fw-bold">Simple clean code</h2>
-              <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xxl-4 mb-5">
-          <div class="card bg-light border-0 h-100">
-            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-              <div class="text-white mb-4 mt-n4 pt-3">
-               <img src="assets/img/teste.png" style="width: 128px; height: 128px;" class="rounded-3">
-              </div>
-              <h2 class="fs-4 fw-bold">A name you trust</h2>
-              <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
-  <footer class="text-center text-white" style="background-color: #3f51b5">
+  <footer class="text-center text-white"
+    style="background: rgb(13,13,14);background: linear-gradient(330deg, rgba(13,13,14,1) 0%, rgba(29,32,34,1) 100%);">
     <div class="container">
       <section>
-        <div class="row text-center d-flex justify-content-center pt-5">
+        <div class="row text-center d-flex justify-content-center pt-4">
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="index.html" class="text-white">Home</a>
+              <a href="index.php" class="text-white" style="text-decoration:none">Home</a>
             </h6>
           </div>
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="admin_login.html" class="text-white">Admin</a>
+              <a href="admin_login.php" class="text-white" style="text-decoration:none">Admin</a>
             </h6>
           </div>
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="student_login.html" class="text-white">Student</a>
+              <a href="student_login.php" class="text-white" style="text-decoration:none">Student</a>
             </h6>
           </div>
         </div>
@@ -149,16 +176,16 @@
         </div>
       </section>
       <section class="text-center mb-3">
-        <a href="https://twitter.com/Pea_gah" class="text-white me-4" target="_blank">
+        <a href="https://twitter.com/Pea_gah" class="text-white me-4" target="_blank" style="text-decoration:none">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="https://www.instagram.com/pea_gah/" class="text-white me-4" target="_blank">
+        <a href="https://www.instagram.com/pea_gah/" class="text-white me-4" target="_blank" style="text-decoration:none">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://www.linkedin.com/in/pedro-henrique-vieira-073b62236/" class="text-white me-4" target="_blank">
+        <a href="https://www.linkedin.com/in/pedro-henrique-vieira-073b62236/" class="text-white me-4" target="_blank" style="text-decoration:none">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/Peagah-Vieira" class="text-white me-4" target="_blank">
+        <a href="https://github.com/Peagah-Vieira" class="text-white me-4" target="_blank" style="text-decoration:none">
           <i class="fab fa-github"></i>
         </a>
       </section>
@@ -172,4 +199,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html>
+</php>
