@@ -13,17 +13,9 @@ if(isset($_POST['send'])){
     $studentAddress = filter_input(INPUT_POST,"studentAddress",FILTER_DEFAULT);
     $studentUsername = filter_input(INPUT_POST,"studentUsername",FILTER_DEFAULT);
     $studentPassword = password_hash(filter_input(INPUT_POST,"studentPassword"),PASSWORD_DEFAULT);
-    //Photo_Path to DataBase
-    $image = $_FILES['image'];
-    $pasta = "../student_images/";
-    $imageName = $image['name'];
-    $imageNewName = uniqid();
-    $extension = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
-    $deu_certo = move_uploaded_file($image['tmp_name'], $pasta . $imageNewName . "." . $extension);
-    $StudentPhoto = $pasta . $imageNewName . "." . $extension;
     $status = $_POST['status'];
     $stm = $conn-> prepare("UPDATE student_sms SET StudentName = :StudentName, StudentEmail = :StudentEmail, StudentClass = :StudentClass, StudentGender = :StudentGender,
-     StudentBirth = :StudentBirth, StudentID = :StudentID, StudentPhoto = :StudentPhoto, FatherName = :FatherName, MotherName = :MotherName, ContactNumber = :StudentNumber, 
+     StudentBirth = :StudentBirth, StudentID = :StudentID, FatherName = :FatherName, MotherName = :MotherName, ContactNumber = :StudentNumber, 
      AlternateNumber = :StudentAlternateNumber, Address = :StudentAddress, Username = :StudentUsername, Password = :StudentPassword, status = :Status WHERE ID = $student_ID"); 
    
     $stm->bindParam(':StudentName', $studentName);
@@ -32,7 +24,6 @@ if(isset($_POST['send'])){
     $stm->bindParam(':StudentGender', $studentGender);
     $stm->bindParam(':StudentBirth', $studentBirth);
     $stm->bindParam(':StudentID', $studentID);
-    $stm->bindParam(':StudentPhoto', $StudentPhoto);
     $stm->bindParam(':FatherName', $FatherName);
     $stm->bindParam(':MotherName', $MotherName);
     $stm->bindParam(':StudentNumber', $studentNumber);
