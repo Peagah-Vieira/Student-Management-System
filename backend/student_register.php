@@ -15,7 +15,7 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
         $student_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM student_sms WHERE StudentClass = '$verify'");
         $student_quantity->execute();
         $student_registers = $student_quantity->fetch(PDO::FETCH_ASSOC);
-        if($student_registers['num_result'] == 5){
+        if($student_registers['num_result'] == 4){
             $class_status = 0;
             echo "<script>alert('Classe Lotada')</script>";
             $stm = $conn->prepare("UPDATE class_sms SET status = :Status WHERE Class = '$teste'"); 
@@ -37,9 +37,9 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
         $studentAddress = filter_input(INPUT_POST,"studentAddress",FILTER_DEFAULT);
         $studentUsername= filter_input(INPUT_POST,"studentUsername",FILTER_DEFAULT);
         $studentPassword = password_hash(filter_input(INPUT_POST,"studentPassword"),PASSWORD_DEFAULT);
+        $status = 1;
         if($studentGender == 'Male'){
             $StudentPhoto = "../student_images/undraw_male_avatar.svg";
-            $status = 1;
             $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password,status) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password,:status)'); 
             $stm->bindParam('StudentName', $studentName);
             $stm->bindParam('StudentEmail', $studentEmail);
@@ -58,9 +58,8 @@ if(isset($_POST['studentName'],$_POST['studentEmail'],$_POST['studentClass'],$_P
             $stm->bindParam('status', $status);
             $stm->execute();
         }
-        else{
+        else if($studentGender == 'Female'){
             $StudentPhoto = "../student_images/undraw_female_avatar.svg";
-            $status = 1;
             $stm = $conn-> prepare('INSERT INTO student_sms(StudentName,StudentEmail,StudentClass,StudentGender,StudentBirth,StudentID,StudentPhoto,FatherName,MotherName,ContactNumber,AlternateNumber,Address,Username,Password,status) VALUES (:StudentName,:StudentEmail,:StudentClass,:StudentGender,:StudentBirth,:StudentID,:StudentPhoto,:FatherName,:MotherName,:ContactNumber,:AlternateNumber,:Address,:Username,:Password,:status)'); 
             $stm->bindParam('StudentName', $studentName);
             $stm->bindParam('StudentEmail', $studentEmail);
