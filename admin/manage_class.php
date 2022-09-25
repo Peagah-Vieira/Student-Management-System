@@ -77,8 +77,8 @@ include_once('../backend/class_data.php');
                                                     <th class="font-weight-light text-dark"><?=$class['Opening_Date']?>
                                                     </th>
                                                     <th class="font-weight-light text-dark"><?=$class['Conclusion_Date']?></th>
-                                                    <th class="font-weight-bold text-dark"><?=$student_registers['num_result']?></th>
-                                                    <th class="font-weight-bold text-dark"><?php if($class['status'] == 1){echo "Active";}else{echo "Inactive"; }?></th>
+                                                    <th class="font-weight-light text-dark"><?=$student_registers['num_result']?></th>
+                                                    <th class="font-weight-light text-dark"><?php if($class['status'] == 1){echo "Active";}else{echo "Inactive"; }?></th>
                                                     <!--Gambiarra-->
                                                     <form action="" method="POST">
                                                     <th class="font-weight-light text-dark">
