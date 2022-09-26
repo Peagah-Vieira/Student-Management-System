@@ -1,4 +1,4 @@
-<?php
+<?php 
 include_once('../backend/pin_code_verify.php');
 ?>
 <html lang="en">
@@ -26,7 +26,7 @@ include_once('../backend/pin_code_verify.php');
                   <h2 class="fw-bold mb-2 text-uppercas">Enter your PIN CODE</h2>
                   <p class="text-white-50 mb-5">Enter a PIN CODE to reset your password!</p>
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="typeUsernameX" class="form-control form-control-lg" placeholder="PIN" name="pin_code" required/>
+                    <input type="text" id="typeUsernameX" class="form-control form-control-lg" placeholder="PIN" name="pin_code" required/>
                   </div>
 
                   <button class="btn btn-outline-light btn-lg px-5" type="submit" name="send">Send</button>

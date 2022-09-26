@@ -17,9 +17,7 @@ if(isset($_POST['username'],$_POST['email'])){
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
 
-    echo "<script>alert('Pin Code sent to your email')</script>";
-    
-    header("Refresh:0; url=admin/pin_code.php");
+    header("location: admin/pin_code.php");
     }
     else{
       echo "<script>alert('Something went Wrong')</script>";
