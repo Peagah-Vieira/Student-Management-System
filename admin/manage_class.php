@@ -61,12 +61,13 @@ include_once('../backend/class_data.php');
                                                 </tr>
                                             </thead>
                                             <?php foreach($db_class as $class){
-                                                    $status = $class['status'];
-                                                    $class_verification = $class['Class'];
+                                                    $status = $class['status']; 
+                                                    $class_verification = $class['Class']; 
                                                 
                                                     $stm = $conn->query("SELECT * FROM class_sms WHERE status = '$status' and Class = '$class_verification'");
                                                     $db_teste = $stm->fetch(PDO::FETCH_ASSOC);
-                                                    $verify = $db_teste['Class'];
+
+                                                    $verify = $db_teste['Class']; 
                                                     
                                                     $student_quantity = $conn->prepare("SELECT COUNT(ID) AS num_result FROM student_sms WHERE StudentClass = '$verify'");
                                                     $student_quantity->execute();
@@ -79,7 +80,6 @@ include_once('../backend/class_data.php');
                                                     <th class="font-weight-light text-dark"><?=$class['Conclusion_Date']?></th>
                                                     <th class="font-weight-light text-dark"><?=$student_registers['num_result']?></th>
                                                     <th class="font-weight-light text-dark"><?php if($class['status'] == 1){echo "Active";}else{echo "Inactive"; }?></th>
-                                                    <!--Gambiarra-->
                                                     <form action="" method="POST">
                                                     <th class="font-weight-light text-dark">
                                                     <a href="class_information.php?class_id=<?=$class['ID']?>"><button class="btn btn-primary" type="button" style="margin:3px;"><i class="fa-solid fa-eye"></i></i></button></a>                                                   
