@@ -1,3 +1,7 @@
+<?php
+include_once('student/backend/db_connect.php');
+include_once('student/backend/student_login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
